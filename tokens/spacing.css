@@ -1,0 +1,25 @@
+/**
+ * Radiant Church — Spacing & Shape Tokens
+ * radiantcentralcoast.com
+ */
+
+:root {
+  /* Base unit: 4px */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  /* Border radius */
+  --radius-sharp: 0px;     /* inputs, cards, blocks — all square */
+  --radius-pill:  300px;   /* buttons only */
+
+  /* Shadows */
+  --shadow-none:  none;
+  --shadow-hamburger: 0 0 20px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,41 @@
+/**
+ * Radiant Church — Form Components
+ * radiantcentralcoast.com
+ */
+
+/* ─── Form Block Wrapper ────────────────────────────────────────── */
+
+.sqs-block-form {
+  background-color: var(--form-bg);          /* #FCF2BF soft butter */
+}
+
+/* ─── Inputs & Textareas ────────────────────────────────────────── */
+
+.sqs-block-form input,
+.sqs-block-form textarea,
+.sqs-block-form select {
+  background-color: var(--form-field-bg);    /* #ffffff */
+  color: var(--form-field-text);             /* #474D47 */
+  border-color: var(--form-field-border);    /* #DCD8D8 */
+  border-radius: var(--radius-sharp);        /* 0px — square corners */
+  box-shadow: none;
+}
+
+/* ─── Submit Button ─────────────────────────────────────────────── */
+
+.sqs-block-form .form-button {
+  background-color: var(--form-btn-bg);      /* #474D47 */
+  color: var(--form-btn-text);               /* #FAF3F0 */
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Newsletter Block ──────────────────────────────────────────── */
+
+.newsletter-block {
+  background-color: var(--bg-block);         /* #FCF2BF */
+}
+
+/* Hide description padding text */
+.newsletter-block .newsletter-form-header-description p {
+  display: none;
+}

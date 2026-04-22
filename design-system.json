@@ -1,0 +1,158 @@
+{
+  "name": "Radiant Church Design System",
+  "version": "1.0.0",
+  "site": "https://radiantcentralcoast.com",
+  "description": "Radiant Church is a vibrant, welcoming community on the Central Coast of California, committed to connecting people to God, to each other, and to a life of purpose. This design system reflects warmth, clarity, and approachability — rooted in earthy, sun-warmed tones and clean, extended typography.",
+  "colorScheme": "light",
+
+  "colors": {
+    "primitives": {
+      "white":       { "value": "#FAF3F0", "hsl": "12, 33%, 97%",          "note": "warm off-white" },
+      "lightAccent": { "value": "#FCF2BF", "hsl": "50.16, 91.04%, 86.86%", "note": "soft butter yellow" },
+      "accent":      { "value": "#BEAD93", "hsl": "36, 25%, 66%",           "note": "warm sand" },
+      "darkAccent":  { "value": "#7A6F65", "hsl": "27, 10%, 43%",           "note": "warm taupe" },
+      "black":       { "value": "#474D47", "hsl": "120, 4%, 29%",           "note": "dark olive" }
+    },
+    "semantic": {
+      "background":         "#FAF3F0",
+      "textPrimary":        "#474D47",
+      "textHeading":        "#474D47",
+      "textHeadingBold":    "#7A6F65",
+      "link":               "#474D47",
+      "linkAccent":         "#BEAD93",
+      "blockBackground":    "#FCF2BF",
+      "imageOverlay":       "#7A6F65",
+      "announcementBg":     "#474D47",
+      "announcementText":   "#FAF3F0"
+    },
+    "buttons": {
+      "primary":   { "background": "#BEAD93", "text": "#FCF2BF" },
+      "secondary": { "background": "#474D47", "text": "#FCF2BF" },
+      "tertiary":  { "background": "#474D47", "text": "#FAF3F0" }
+    }
+  },
+
+  "typography": {
+    "fontFamilies": {
+      "heading":          "aktiv-grotesk-extended",
+      "body":             "aktiv-grotesk-condensed",
+      "callout":          "span-semiboldcomp",
+      "secondaryCallout": "span-regularconditalic"
+    },
+    "customFonts": [
+      {
+        "family":  "span-semiboldcomp",
+        "weight":  "600",
+        "style":   "normal",
+        "format":  "otf",
+        "src":     "https://static1.squarespace.com/static/67f01da1e0b3122fc6194b9f/t/67f699ec98d97739a8fbd1b0/1744214509051/span-semiboldcomp.otf",
+        "usage":   "em inside h1–h3, mobile nav links"
+      },
+      {
+        "family":  "span-regularconditalic",
+        "weight":  "400",
+        "style":   "normal",
+        "format":  "otf",
+        "src":     "https://static1.squarespace.com/static/67f01da1e0b3122fc6194b9f/t/67f699e11c8d1130d62f082c/1744214497753/span-regularconditalic.otf",
+        "usage":   ".sqsrte-small em, nav controls"
+      }
+    ],
+    "scale": {
+      "desktop": {
+        "h1":              "120px",
+        "h1Em":            "inherits h1",
+        "h2":              "118.4px",
+        "h3":              "unset",
+        "h4":              "unset",
+        "body":            "12.8px",
+        "smallCallout":    "28px",
+        "summaryHeader":   "22px",
+        "mobileNavLink":   "45px",
+        "mobileNavControl":"25px"
+      },
+      "mobile": {
+        "breakpoint": "767px",
+        "h1":    "50px",
+        "h1Em":  "55px",
+        "h2":    "55px",
+        "h2Em":  "55px",
+        "h3":    "55px",
+        "h3Em":  "55px"
+      }
+    },
+    "calloutPattern": {
+      "description": "Wrapping a word in <em> inside h1–h3 switches to span-semiboldcomp. font-style: normal suppresses italic — em is a typographic switch, not semantic emphasis.",
+      "selectors": ["h1 em", "h2 em", "h3 em"],
+      "font": "span-semiboldcomp",
+      "fontStyle": "normal"
+    },
+    "hyphens": "manual"
+  },
+
+  "spacing": {
+    "baseUnit": "4px",
+    "scale": [4, 8, 12, 16, 24, 32, 48, 64, 96]
+  },
+
+  "shape": {
+    "borderRadiusSharp": "0px",
+    "borderRadiusPill":  "300px",
+    "shadowNone":        "none"
+  },
+
+  "components": {
+    "button": {
+      "borderRadius": "300px",
+      "width":        "80%",
+      "shadow":       "none"
+    },
+    "input": {
+      "background":   "#ffffff",
+      "textColor":    "#474D47",
+      "borderColor":  "#DCD8D8",
+      "borderRadius": "0px",
+      "shadow":       "none"
+    },
+    "formBlock": {
+      "background":   "#FCF2BF"
+    },
+    "summaryBlockHeader": {
+      "fontWeight":    "600",
+      "fontSize":      "22px",
+      "textTransform": "uppercase"
+    },
+    "hamburgerMenu": {
+      "maxHeight":          "70vh",
+      "shadowOpacity":      "0.15",
+      "overlayOpacity":     "0",
+      "overlayBlur":        "2px",
+      "overlayColor":       "black",
+      "bottomBorderColor":  "currentColor",
+      "bottomBorderThickness": "2px"
+    }
+  },
+
+  "navigation": {
+    "mobileNavFont":     "span-semiboldcomp",
+    "mobileNavSize":     "45px",
+    "mobileNavLetterSpacing": "0px",
+    "navControlFont":    "span-regularconditalic",
+    "navControlSize":    "25px",
+    "navControlTransform": "lowercase"
+  },
+
+  "assets": {
+    "logo":     "https://images.squarespace-cdn.com/content/v1/69b4142c015aca3fb15d6281/888ac37b-9c20-49d5-9224-903178de8437/Radiant-Word_Mark-DRK-HOR.png?format=1500w",
+    "logoAlt":  "Radiant Church",
+    "logoHref": "/",
+    "favicon":  "https://images.squarespace-cdn.com/content/v1/69b4142c015aca3fb15d6281/1773409344269-VLTB8YEB2VUQAJA70COM/favicon.ico?format=100w",
+    "ogImage":  "http://static1.squarespace.com/static/69b4142c015aca3fb15d6281/t/69ce788e75d56879db3611af/1775138958633/Radiant-Word_Mark-DRK-HOR.png?format=1500w"
+  },
+
+  "personality": {
+    "tone":           "professional",
+    "energy":         "medium",
+    "targetAudience": "churchgoers and community members on the Central Coast",
+    "character":      "warm, approachable, editorial — earthy tones with structured extended type"
+  }
+}

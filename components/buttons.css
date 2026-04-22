@@ -1,0 +1,48 @@
+/**
+ * Radiant Church — Button Components
+ * radiantcentralcoast.com
+ */
+
+/* ─── Base Button ───────────────────────────────────────────────── */
+
+.btn {
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-none);
+  width: 80%;
+  display: inline-block;
+  text-align: center;
+}
+
+/* ─── Primary ───────────────────────────────────────────────────── */
+
+.btn-primary,
+.sqs-block-button-element--primary {
+  background-color: var(--btn-primary-bg);   /* #BEAD93 warm sand */
+  color: var(--btn-primary-text);            /* #FCF2BF soft butter */
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Secondary ─────────────────────────────────────────────────── */
+
+.btn-secondary,
+.sqs-block-button-element--secondary {
+  background-color: var(--btn-secondary-bg); /* #474D47 dark olive */
+  color: var(--btn-secondary-text);          /* #FCF2BF soft butter */
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Tertiary ──────────────────────────────────────────────────── */
+
+.btn-tertiary {
+  background-color: var(--btn-tertiary-bg);  /* #474D47 */
+  color: var(--btn-tertiary-text);           /* #FAF3F0 warm white */
+  border-radius: var(--radius-pill);
+}
+
+/* ─── Size Widths ───────────────────────────────────────────────── */
+
+.sqs-block-button-element--small,
+.sqs-block-button-element--medium,
+.sqs-block-button-element--large {
+  width: 80% !important;
+}

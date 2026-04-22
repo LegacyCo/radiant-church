@@ -1,0 +1,62 @@
+/**
+ * Radiant Church — Color Tokens
+ * radiantcentralcoast.com
+ */
+
+:root {
+  /* Primitives */
+  --color-white:        hsl(12, 33%, 97%);         /* #FAF3F0 — warm off-white */
+  --color-light-accent: hsl(50.16, 91.04%, 86.86%);/* #FCF2BF — soft butter yellow */
+  --color-accent:       hsl(36, 25%, 66%);          /* #BEAD93 — warm sand */
+  --color-dark-accent:  hsl(27, 10%, 43%);          /* #7A6F65 — warm taupe */
+  --color-black:        hsl(120, 4%, 29%);           /* #474D47 — dark olive */
+
+  /* Semantic — Text */
+  --text-primary:       var(--color-black);
+  --text-heading:       var(--color-black);
+  --text-heading-bold:  var(--color-dark-accent);   /* white-bold section override */
+  --text-link:          var(--color-black);
+  --text-link-accent:   var(--color-accent);
+  --text-heading-link:  var(--color-black);
+  --text-paragraph-link:var(--color-black);
+
+  /* Semantic — Backgrounds */
+  --bg-site:            var(--color-white);
+  --bg-block:           var(--color-light-accent);  /* cards, text blocks, accordions */
+  --bg-overlay:         var(--color-dark-accent);   /* image overlays */
+  --bg-overlay-global:  hsla(120, 4%, 29%, 0.5);    /* 50% dark olive */
+
+  /* Semantic — Buttons */
+  --btn-primary-bg:     var(--color-accent);        /* #BEAD93 */
+  --btn-primary-text:   var(--color-light-accent);  /* #FCF2BF */
+  --btn-secondary-bg:   var(--color-black);         /* #474D47 */
+  --btn-secondary-text: var(--color-light-accent);  /* #FCF2BF */
+  --btn-tertiary-bg:    var(--color-black);
+  --btn-tertiary-text:  var(--color-white);
+
+  /* Semantic — Navigation */
+  --nav-link:           var(--color-black);
+  --nav-bg-solid:       var(--color-white);
+  --nav-overlay-bg:     var(--color-white);
+  --nav-overlay-link:   var(--color-black);
+  --nav-overlay-btn-bg: var(--color-black);
+  --nav-overlay-btn-text: var(--color-white);
+
+  /* Semantic — Announcement Bar */
+  --announcement-bg:    var(--color-black);
+  --announcement-text:  var(--color-white);
+
+  /* Semantic — Forms */
+  --form-bg:            var(--color-light-accent);
+  --form-field-bg:      #ffffff;
+  --form-field-border:  #DCD8D8;
+  --form-field-text:    var(--color-black);
+  --form-field-accent:  var(--color-accent);
+  --form-btn-bg:        var(--color-black);
+  --form-btn-text:      var(--color-white);
+
+  /* Semantic — Borders & Dividers */
+  --border-color:       var(--color-black);
+  --divider-color:      var(--color-black);
+  --section-divider:    var(--color-black);
+}

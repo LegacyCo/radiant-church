@@ -1,0 +1,57 @@
+/**
+ * Radiant Church — Content Block Components
+ * radiantcentralcoast.com
+ */
+
+/* ─── Summary Block ─────────────────────────────────────────────── */
+
+.sqs-block-summary-v2 .summary-title,
+.sqs-block-summary-v2 .summary-heading {
+  font-weight: 600;
+  font-size: 22px !important;
+  text-transform: uppercase;
+}
+
+/* ─── Quote Block ───────────────────────────────────────────────── */
+
+.sqs-block-quote {
+  background-color: var(--bg-block);         /* #FCF2BF */
+  color: var(--text-primary);
+}
+
+/* ─── Accordion Block ───────────────────────────────────────────── */
+
+.sqs-block-accordion {
+  background-color: var(--bg-block);
+  border-color: var(--border-color);
+}
+
+/* ─── Text Block ────────────────────────────────────────────────── */
+
+.sqs-block-html {
+  background-color: var(--bg-block);
+}
+
+/* ─── Marquee Block ─────────────────────────────────────────────── */
+
+.sqs-block-marquee {
+  background-color: var(--bg-block);
+}
+
+/* ─── Blog — Hide Meta ──────────────────────────────────────────── */
+
+.blog-item-wrapper .blog-meta-item,
+.blog-item-wrapper .blog-meta-item a,
+.blog-item-wrapper .blog-meta-item span {
+  display: none;
+}
+
+/* ─── Image Overlays ────────────────────────────────────────────── */
+
+.sqs-block-image .image-overlay {
+  background-color: var(--bg-overlay);       /* #7A6F65 warm taupe */
+}
+
+.sqs-block-image .global-overlay {
+  background-color: var(--bg-overlay-global);/* rgba(71,77,71,0.5) */
+}

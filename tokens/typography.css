@@ -1,0 +1,98 @@
+/**
+ * Radiant Church — Typography Tokens
+ * radiantcentralcoast.com
+ */
+
+/* ─── Custom Font Faces ─────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'span-semiboldcomp';
+  src: url('https://static1.squarespace.com/static/67f01da1e0b3122fc6194b9f/t/67f699ec98d97739a8fbd1b0/1744214509051/span-semiboldcomp.otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'span-regularconditalic';
+  src: url('https://static1.squarespace.com/static/67f01da1e0b3122fc6194b9f/t/67f699e11c8d1130d62f082c/1744214497753/span-regularconditalic.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ─── Font Families ─────────────────────────────────────────────── */
+
+:root {
+  --font-heading:       'aktiv-grotesk-extended', sans-serif;
+  --font-body:          'aktiv-grotesk-condensed', sans-serif;
+  --font-callout:       'span-semiboldcomp', sans-serif;       /* em in headings, mobile nav */
+  --font-secondary-callout: 'span-regularconditalic', sans-serif; /* small em, nav controls */
+}
+
+/* ─── Type Scale — Desktop ──────────────────────────────────────── */
+
+:root {
+  --font-size-h1:       120px;
+  --font-size-h2:       118.4px;
+  --font-size-h3:       inherit;   /* not explicitly set desktop */
+  --font-size-h4:       inherit;
+  --font-size-body:     12.8px;
+  --font-size-callout:  28px;      /* .sqsrte-small em */
+  --line-height-callout:28px;
+  --font-size-summary-header: 22px;
+  --font-size-nav-mobile: 45px;
+  --font-size-nav-controls: 25px;
+}
+
+/* ─── Type Scale — Mobile (max-width: 767px) ────────────────────── */
+
+@media screen and (max-width: 767px) {
+  :root {
+    --font-size-h1:     50px;
+    --font-size-h1-em:  55px;     /* callout em slightly larger */
+    --font-size-h2:     55px;
+    --font-size-h2-em:  55px;
+    --font-size-h3:     55px;
+    --font-size-h3-em:  55px;
+  }
+}
+
+/* ─── Heading Callout Pattern ───────────────────────────────────── */
+/*
+ * Wrapping a word in <em> inside h1–h3 switches to span-semiboldcomp.
+ * font-style: normal suppresses italic — em is used as a typographic
+ * switch only, not for semantic emphasis.
+ */
+
+h1 em,
+h2 em,
+h3 em {
+  font-family: var(--font-callout);
+  font-style: normal;
+}
+
+@media screen and (max-width: 767px) {
+  h1    { font-size: var(--font-size-h1); }
+  h1 em { font-size: var(--font-size-h1-em); }
+  h2    { font-size: var(--font-size-h2); }
+  h2 em { font-size: var(--font-size-h2-em); }
+  h3    { font-size: var(--font-size-h3); }
+  h3 em { font-size: var(--font-size-h3-em); }
+}
+
+/* ─── Small Text Callout ────────────────────────────────────────── */
+
+.sqsrte-small em {
+  font-family: var(--font-secondary-callout);
+  font-style: normal;
+  font-size: var(--font-size-callout);
+  line-height: var(--line-height-callout);
+  text-transform: none;
+}
+
+/* ─── Hyphens — Disabled Globally on Headings ──────────────────── */
+
+h1, h2, h3, h4 {
+  -webkit-hyphens: manual !important;
+  -ms-hyphens: manual !important;
+  hyphens: manual !important;
+}

@@ -1,0 +1,54 @@
+/**
+ * Radiant Church — Navigation Components
+ * radiantcentralcoast.com
+ */
+
+/* ─── Solid Header ──────────────────────────────────────────────── */
+
+.header--solid {
+  background-color: var(--nav-bg-solid);     /* #FAF3F0 */
+  border-color: var(--border-color);
+}
+
+.header--solid .header-nav-item a {
+  color: var(--nav-link);                    /* #474D47 */
+}
+
+/* ─── Menu Overlay ──────────────────────────────────────────────── */
+
+.header-menu {
+  background-color: var(--nav-overlay-bg);   /* #FAF3F0 */
+}
+
+.header-menu-nav-item a {
+  color: var(--nav-overlay-link);            /* #474D47 */
+  font-family: var(--font-callout);          /* span-semiboldcomp */
+  font-size: 45px;
+  letter-spacing: 0px;
+}
+
+.header-menu-controls-control span {
+  font-family: var(--font-secondary-callout);/* span-regularconditalic */
+  font-size: 25px;
+  text-transform: lowercase;
+}
+
+/* ─── Hamburger Menu ────────────────────────────────────────────── */
+
+.wm-mega-hamburger {
+  --url: 'hamburger-menu';
+  --max-height: 70vh;
+  --shadow-opacity: 0.15;
+  --overlay-opacity: 0;
+  --overlay-blur: 2px;
+  --overlay-color: black;
+  --bottom-border-color: currentColor;
+  --bottom-border-thickness: 2px;
+}
+
+/* ─── Announcement Bar ──────────────────────────────────────────── */
+
+.announcement-bar {
+  background-color: var(--announcement-bg);  /* #474D47 */
+  color: var(--announcement-text);           /* #FAF3F0 */
+}

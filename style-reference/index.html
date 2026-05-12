@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Radiant Church — /sermon-archive Style Reference</title>
+<meta name="description" content="Side-by-side reference of every format, CSS snippet, and example in the Radiant Church /sermon-archive master message template. Source: LegacyCo/radiant-church." />
+
+<!-- Real design tokens (verbatim from radiant-church repo) -->
+<link rel="stylesheet" href="../tokens/colors.css" />
+<link rel="stylesheet" href="../tokens/typography.css" />
+<link rel="stylesheet" href="../tokens/spacing.css" />
+<link rel="stylesheet" href="../components/buttons.css" />
+<link rel="stylesheet" href="../components/content-blocks.css" />
+<link rel="stylesheet" href="../components/forms.css" />
+<link rel="stylesheet" href="../components/navigation.css" />
+
+<!-- Page chrome only -->
+<link rel="stylesheet" href="style-reference.css" />
+
+<!-- Aktiv Grotesk via Adobe Fonts (matches live site) -->
+<link rel="stylesheet" href="https://use.typekit.net/wgi1uoq.css">
+</head>
+<body class="ref">
+
+<div class="ref-shell">
+
+  <!-- ───────── Sidebar / TOC ───────── -->
+  <aside class="ref-sidebar">
+    <h2>Format Index</h2>
+    <a class="repo-link" href="https://github.com/LegacyCo/radiant-church">github.com/LegacyCo/radiant-church</a>
+
+    <nav>
+      <ol>
+        <li><a href="#color-tokens">Color Tokens</a></li>
+        <li><a href="#typography">Typography &amp; Callouts</a></li>
+        <li><a href="#buttons">Buttons (Primary / Secondary / Tertiary)</a></li>
+        <li><a href="#hero-video">Hero Video Embed</a></li>
+        <li><a href="#metadata-row">Metadata Row</a></li>
+        <li><a href="#summary-block">Summary Block (Archive Grid)</a></li>
+        <li><a href="#sermon-carousel">More Sermons Carousel</a></li>
+        <li><a href="#next-steps-band">Next Steps Band</a></li>
+        <li><a href="#quote-block">Quote Block</a></li>
+        <li><a href="#accordion-block">Accordion Block</a></li>
+        <li><a href="#text-block">Text / HTML Block</a></li>
+        <li><a href="#marquee-block">Marquee Block</a></li>
+        <li><a href="#image-overlay">Image Overlays</a></li>
+        <li><a href="#form-block">Form Block</a></li>
+        <li><a href="#announcement-bar">Announcement Bar</a></li>
+        <li><a href="#nav-menu">Mobile Nav Overlay</a></li>
+      </ol>
+    </nav>
+
+    <div class="sb-section">
+      <h2>Hand-off</h2>
+      <nav>
+        <ol style="counter-reset: section 16;">
+          <li><a href="#merge">Merge into master skill</a></li>
+          <li><a href="#tokens-table">Token cheat-sheet</a></li>
+        </ol>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ───────── Main ───────── -->
+  <main class="ref-main">
+
+    <header class="ref-header">
+      <p class="eyebrow">Radiant Central Coast · /sermon-archive</p>
+      <h1>Master Message <em>Template</em><br/>Style Reference</h1>
+      <p>Every format used by the <code>/sermon-archive</code> master message template, side-by-side with the exact CSS snippet and a live rendered example. Built from the canonical tokens and components in <a href="https://github.com/LegacyCo/radiant-church">LegacyCo/radiant-church</a>. Drop this folder into the master skill or merge any single card back into the source repo.</p>
+      <div class="ref-meta">
+        <span>Source <strong>LegacyCo/radiant-church</strong></span>
+        <span>Site <strong>radiantcentralcoast.com</strong></span>
+        <span>Tokens <strong>tokens/index.css</strong></span>
+        <span>Generated <strong>2026-05-12</strong></span>
+      </div>
+    </header>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         01 · COLOR TOKENS
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="color-tokens">
+      <div class="format-meta">
+        <p class="num">01 · Token</p>
+        <h3>Color Tokens</h3>
+        <p>Five primitives that drive every surface, border, and CTA on the sermon archive. Use semantic names (<code>--bg-block</code>) not primitives in components.</p>
+        <span class="filepath">tokens/colors.css</span>
+        <span class="selector">:root { --color-* }</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="color-tokens-code">Copy</button>
+<pre id="color-tokens-code"><span class="c">/* Primitives */</span>
+<span class="p">--color-white</span>:        <span class="v">hsl(12, 33%, 97%)</span>;        <span class="c">/* #FAF3F0 */</span>
+<span class="p">--color-light-accent</span>: <span class="v">hsl(50.16, 91.04%, 86.86%)</span>;<span class="c">/* #FCF2BF */</span>
+<span class="p">--color-accent</span>:       <span class="v">hsl(36, 25%, 66%)</span>;          <span class="c">/* #BEAD93 */</span>
+<span class="p">--color-dark-accent</span>:  <span class="v">hsl(27, 10%, 43%)</span>;          <span class="c">/* #7A6F65 */</span>
+<span class="p">--color-black</span>:        <span class="v">hsl(120, 4%, 29%)</span>;           <span class="c">/* #474D47 */</span>
+
+<span class="c">/* Semantic — pick these, not the primitives */</span>
+<span class="p">--bg-site</span>:    <span class="v">var(--color-white)</span>;
+<span class="p">--bg-block</span>:   <span class="v">var(--color-light-accent)</span>;
+<span class="p">--bg-overlay</span>: <span class="v">var(--color-dark-accent)</span>;
+<span class="p">--text-primary</span>: <span class="v">var(--color-black)</span>;</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body">
+          <div class="swatch-grid">
+            <div class="swatch">
+              <div class="chip" style="background:#FAF3F0;"></div>
+              <div class="label"><span class="name">Warm White</span>#FAF3F0<br/>--color-white</div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background:#FCF2BF;"></div>
+              <div class="label"><span class="name">Soft Butter</span>#FCF2BF<br/>--color-light-accent</div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background:#BEAD93;"></div>
+              <div class="label"><span class="name">Warm Sand</span>#BEAD93<br/>--color-accent</div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background:#7A6F65;"></div>
+              <div class="label"><span class="name">Warm Taupe</span>#7A6F65<br/>--color-dark-accent</div>
+            </div>
+            <div class="swatch">
+              <div class="chip" style="background:#474D47;"></div>
+              <div class="label"><span class="name">Dark Olive</span>#474D47<br/>--color-black</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         02 · TYPOGRAPHY & CALLOUTS
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="typography">
+      <div class="format-meta">
+        <p class="num">02 · Token</p>
+        <h3>Typography &amp; <em>Callouts</em></h3>
+        <p>Heading and body families plus the <code>&lt;em&gt;</code> callout swap — wrap a single word in <code>&lt;em&gt;</code> inside <code>h1</code>–<code>h3</code> to switch fonts. Used on every sermon title and section heading.</p>
+        <span class="filepath">tokens/typography.css</span>
+        <span class="selector">h1 em, h2 em, h3 em, .sqsrte-small em</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="type-code">Copy</button>
+<pre id="type-code"><span class="p">--font-heading</span>:           <span class="v">'aktiv-grotesk-extended', sans-serif</span>;
+<span class="p">--font-body</span>:              <span class="v">'aktiv-grotesk-condensed', sans-serif</span>;
+<span class="p">--font-callout</span>:           <span class="v">'span-semiboldcomp', sans-serif</span>;
+<span class="p">--font-secondary-callout</span>: <span class="v">'span-regularconditalic', sans-serif</span>;
+
+<span class="s">h1 em, h2 em, h3 em</span> {
+  <span class="p">font-family</span>: <span class="v">var(--font-callout)</span>;
+  <span class="p">font-style</span>: <span class="v">normal</span>;  <span class="c">/* em as typographic switch, not italic */</span>
+}
+
+<span class="s">.sqsrte-small em</span> {
+  <span class="p">font-family</span>: <span class="v">var(--font-secondary-callout)</span>;
+  <span class="p">font-size</span>: <span class="v">28px</span>;
+  <span class="p">line-height</span>: <span class="v">28px</span>;
+  <span class="p">text-transform</span>: <span class="v">none</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="flex-direction:column; align-items:flex-start; gap:14px;">
+          <h1 style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:48px; line-height:1; margin:0; color:#474D47; font-weight:700;">This Is The <em style="font-family:'span-semiboldcomp',sans-serif; font-style:normal;">Time</em></h1>
+          <p style="font-family:'aktiv-grotesk-condensed',sans-serif; font-size:14px; line-height:1.55; margin:0; color:#474D47; max-width:42ch;">Body copy uses <strong>Aktiv Grotesk Condensed</strong> at 12.8&nbsp;px. The <em style="font-family:'span-regularconditalic',sans-serif; font-style:normal; font-size:18px;">small italic callout</em> reaches for span-regularconditalic.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         03 · BUTTONS
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="buttons">
+      <div class="format-meta">
+        <p class="num">03 · Component</p>
+        <h3>Buttons</h3>
+        <p>Pill buttons, 80% width, no shadow. Three roles: <strong>Primary</strong> (Watch, RSVP), <strong>Secondary</strong> (Give, Subscribe), <strong>Tertiary</strong> (ghost on light bands).</p>
+        <span class="filepath">components/buttons.css</span>
+        <span class="selector">.sqs-block-button-element--primary / --secondary, .btn-tertiary</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="btn-code">Copy</button>
+<pre id="btn-code"><span class="s">.btn-primary,
+.sqs-block-button-element--primary</span> {
+  <span class="p">background-color</span>: <span class="v">var(--btn-primary-bg)</span>;   <span class="c">/* #BEAD93 */</span>
+  <span class="p">color</span>:            <span class="v">var(--btn-primary-text)</span>; <span class="c">/* #FCF2BF */</span>
+  <span class="p">border-radius</span>:    <span class="v">var(--radius-pill)</span>;       <span class="c">/* 300px */</span>
+}
+
+<span class="s">.btn-secondary,
+.sqs-block-button-element--secondary</span> {
+  <span class="p">background-color</span>: <span class="v">var(--btn-secondary-bg)</span>;   <span class="c">/* #474D47 */</span>
+  <span class="p">color</span>:            <span class="v">var(--btn-secondary-text)</span>; <span class="c">/* #FCF2BF */</span>
+  <span class="p">border-radius</span>:    <span class="v">var(--radius-pill)</span>;
+}
+
+<span class="s">.btn-tertiary</span> {
+  <span class="p">background-color</span>: <span class="v">var(--btn-tertiary-bg)</span>;   <span class="c">/* #474D47 */</span>
+  <span class="p">color</span>:            <span class="v">var(--btn-tertiary-text)</span>; <span class="c">/* #FAF3F0 */</span>
+  <span class="p">border-radius</span>:    <span class="v">var(--radius-pill)</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="flex-direction:column; gap:10px; align-items:stretch; padding:0 12%;">
+          <a href="#" style="display:block; text-align:center; padding:14px 24px; background:#BEAD93; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Watch Latest Sermon</a>
+          <a href="#" style="display:block; text-align:center; padding:14px 24px; background:#474D47; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Give</a>
+          <a href="#" style="display:block; text-align:center; padding:14px 24px; background:#474D47; color:#FAF3F0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Subscribe</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         04 · HERO VIDEO EMBED
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="hero-video">
+      <div class="format-meta">
+        <p class="num">04 · Layout · Hero</p>
+        <h3>Hero Video Embed</h3>
+        <p>Full-width 16:9 YouTube iframe on Dark Olive. Powered by the live/VOD switcher widget — falls back to the most recent video in the sermon playlist when no stream is live.</p>
+        <span class="filepath">church-youtube-widget/squarespace-embed.html</span>
+        <span class="selector">.radiant-hero / iframe wrapper</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">HTML</span>
+        <button class="copy-btn" data-copy="hero-code">Copy</button>
+<pre id="hero-code"><span class="c">&lt;!-- Squarespace Code Block, placed at top of /messages or /sermon-archive --&gt;</span>
+&lt;div class=<span class="v">"radiant-hero"</span> style=<span class="v">"background:#474D47"</span>&gt;
+  &lt;div class=<span class="v">"radiant-hero__frame"</span>&gt;
+    &lt;iframe
+      src=<span class="v">"https://www.youtube.com/embed/VIDEO_ID?rel=0"</span>
+      title=<span class="v">"Latest Sermon"</span>
+      allow=<span class="v">"accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture"</span>
+      allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+  &lt;a class=<span class="v">"btn btn-primary radiant-hero__cta"</span> href=<span class="v">"#"</span>&gt;
+    Watch Latest Sermon
+  &lt;/a&gt;
+&lt;/div&gt;
+
+<span class="c">/* Widget logic: live polling + playlist fallback */</span>
+<span class="c">// See LegacyCo/legacy_playground/church-youtube-widget/squarespace-embed.html</span></pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="width:100%; background:#474D47; padding:16px;">
+            <div style="position:relative; padding-bottom:56.25%; height:0; background:#000;">
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; letter-spacing:0.16em;">▶  16:9 YOUTUBE IFRAME</div>
+            </div>
+            <div style="text-align:center; margin-top:16px;">
+              <a href="#" style="display:inline-block; padding:10px 28px; background:#BEAD93; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Watch Latest Sermon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         05 · METADATA ROW
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="metadata-row">
+      <div class="format-meta">
+        <p class="num">05 · Layout · Body</p>
+        <h3>Metadata Row</h3>
+        <p>60/40 two-column under the hero. Left: title, speaker, date, primary actions, description. Right: <em>Sermon Discussion</em> card linking out to questions.</p>
+        <span class="filepath">layout pattern — Squarespace section</span>
+        <span class="selector">.sermon-meta-row / .sermon-discussion-card</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">HTML</span>
+        <button class="copy-btn" data-copy="meta-code">Copy</button>
+<pre id="meta-code"><span class="s">&lt;section class=<span class="v">"sermon-meta-row"</span>&gt;</span>
+  &lt;div class=<span class="v">"sermon-meta-row__main"</span>&gt;
+    &lt;h1&gt;This Is The &lt;em&gt;Time&lt;/em&gt;&lt;/h1&gt;
+    &lt;p class=<span class="v">"sermon-meta"</span>&gt;Pastor Jonathan Josephs · Sept 7, 2025 · 42 min&lt;/p&gt;
+    &lt;div class=<span class="v">"sermon-actions"</span>&gt;
+      &lt;a class=<span class="v">"btn btn-secondary"</span> href=<span class="v">"/give"</span>&gt;Give&lt;/a&gt;
+      &lt;a class=<span class="v">"btn btn-tertiary"</span> href=<span class="v">"/subscribe"</span>&gt;Subscribe&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Service description and notes…&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;aside class=<span class="v">"sermon-discussion-card"</span>&gt;
+    &lt;h4&gt;Sermon Discussion&lt;/h4&gt;
+    &lt;p&gt;Go deeper with this week’s questions.&lt;/p&gt;
+    &lt;a class=<span class="v">"btn btn-primary"</span> href=<span class="v">"#"</span>&gt;Open Questions&lt;/a&gt;
+  &lt;/aside&gt;
+<span class="s">&lt;/section&gt;</span></pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%; align-items:stretch;">
+          <div style="display:grid; grid-template-columns: 60% 40%; gap:16px; width:100%; align-items:start;">
+            <div>
+              <h1 style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:28px; line-height:1.05; margin:0 0 8px; color:#474D47; font-weight:700; text-transform:uppercase;">This Is The <em style="font-family:'span-semiboldcomp',sans-serif; font-style:normal;">Time</em></h1>
+              <p style="margin:0 0 12px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#7A6F65;">Pastor Jonathan Josephs · Sept 7, 2025 · 42 min</p>
+              <div style="display:flex; gap:8px; margin-bottom:12px;">
+                <a href="#" style="padding:8px 16px; background:#474D47; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Give</a>
+                <a href="#" style="padding:8px 16px; background:#474D47; color:#FAF3F0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Subscribe</a>
+              </div>
+              <p style="margin:0; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:12px; color:#474D47; line-height:1.55;">A sermon description and notes preview field. Two to four sentences pulled from the message archive entry’s body copy.</p>
+            </div>
+            <aside style="background:#FCF2BF; padding:14px;">
+              <h4 style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; margin:0 0 6px; color:#474D47; text-transform:uppercase; letter-spacing:0.04em;">Sermon Discussion</h4>
+              <p style="margin:0 0 10px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:11px; color:#474D47;">Go deeper with this week’s questions.</p>
+              <a href="#" style="display:inline-block; padding:6px 14px; background:#BEAD93; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Open Questions</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         06 · SUMMARY BLOCK (ARCHIVE GRID)
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="summary-block">
+      <div class="format-meta">
+        <p class="num">06 · Component</p>
+        <h3>Summary Block</h3>
+        <p>Powers the “Past Messages” grid on <code>/messages</code> pulling posts from <code>/sermon-archive</code>. Titles forced to 22 px uppercase semibold; meta is hidden.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-summary-v2 .summary-title</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="summary-code">Copy</button>
+<pre id="summary-code"><span class="s">.sqs-block-summary-v2 .summary-title,
+.sqs-block-summary-v2 .summary-heading</span> {
+  <span class="p">font-weight</span>:    <span class="v">600</span>;
+  <span class="p">font-size</span>:      <span class="v">22px !important</span>;
+  <span class="p">text-transform</span>: <span class="v">uppercase</span>;
+}
+
+<span class="c">/* Hide blog meta inside summary cards */</span>
+<span class="s">.blog-item-wrapper .blog-meta-item</span>,
+<span class="s">.blog-item-wrapper .blog-meta-item a</span>,
+<span class="s">.blog-item-wrapper .blog-meta-item span</span> {
+  <span class="p">display</span>: <span class="v">none</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; width:100%;">
+            <div>
+              <div style="aspect-ratio:16/9; background:linear-gradient(135deg,#7A6F65,#474D47);"></div>
+              <p style="margin:8px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; color:#474D47; line-height:1.2;">This Is The Time</p>
+            </div>
+            <div>
+              <div style="aspect-ratio:16/9; background:linear-gradient(135deg,#BEAD93,#7A6F65);"></div>
+              <p style="margin:8px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; color:#474D47; line-height:1.2;">All Things New</p>
+            </div>
+            <div>
+              <div style="aspect-ratio:16/9; background:linear-gradient(135deg,#474D47,#7A6F65);"></div>
+              <p style="margin:8px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; color:#474D47; line-height:1.2;">Anchor &amp; Sail</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         07 · MORE SERMONS CAROUSEL
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="sermon-carousel">
+      <div class="format-meta">
+        <p class="num">07 · Layout</p>
+        <h3>More Sermons Carousel</h3>
+        <p>Horizontal scrollable card row pulling recent posts from <code>/sermon-archive</code>. Same uppercase 22 px title rule as the grid summary.</p>
+        <span class="filepath">layout pattern — Squarespace Summary Block (carousel)</span>
+        <span class="selector">.sermon-carousel / .summary-block-setting-design-autocolumns</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">HTML</span>
+        <button class="copy-btn" data-copy="carousel-code">Copy</button>
+<pre id="carousel-code"><span class="s">&lt;section class=<span class="v">"sermon-carousel"</span>&gt;</span>
+  &lt;h2&gt;More &lt;em&gt;Sermons&lt;/em&gt;&lt;/h2&gt;
+  &lt;div class=<span class="v">"sermon-carousel__track"</span>&gt;
+    &lt;!-- Squarespace Summary Block, layout = carousel, source = /sermon-archive --&gt;
+  &lt;/div&gt;
+  &lt;a class=<span class="v">"btn btn-tertiary"</span> href=<span class="v">"/sermon-archive"</span>&gt;See All&lt;/a&gt;
+<span class="s">&lt;/section&gt;</span>
+
+<span class="c">/* Inherits .sqs-block-summary-v2 title rules from content-blocks.css */</span></pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="width:100%; overflow:hidden;">
+            <div style="display:flex; gap:8px;">
+              <div style="flex:0 0 32%;"><div style="aspect-ratio:16/9; background:linear-gradient(135deg,#7A6F65,#474D47);"></div><p style="margin:6px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; text-transform:uppercase; color:#474D47;">This Is The Time</p></div>
+              <div style="flex:0 0 32%;"><div style="aspect-ratio:16/9; background:linear-gradient(135deg,#BEAD93,#7A6F65);"></div><p style="margin:6px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; text-transform:uppercase; color:#474D47;">All Things New</p></div>
+              <div style="flex:0 0 32%;"><div style="aspect-ratio:16/9; background:linear-gradient(135deg,#474D47,#7A6F65);"></div><p style="margin:6px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; text-transform:uppercase; color:#474D47;">Anchor &amp; Sail</p></div>
+              <div style="flex:0 0 32%;"><div style="aspect-ratio:16/9; background:linear-gradient(135deg,#FCF2BF,#BEAD93);"></div><p style="margin:6px 0 0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; text-transform:uppercase; color:#474D47;">Quiet Mercy</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         08 · NEXT STEPS BAND
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="next-steps-band">
+      <div class="format-meta">
+        <p class="num">08 · Layout</p>
+        <h3>Next Steps Band</h3>
+        <p>Full-width Soft Butter band with a 3-column grid: Salvation, Baptism, Find Your People. Each column has an icon, heading, description, and a ghost (tertiary) CTA.</p>
+        <span class="filepath">layout pattern — section + button-tertiary</span>
+        <span class="selector">.next-steps-band</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">HTML / CSS</span>
+        <button class="copy-btn" data-copy="next-code">Copy</button>
+<pre id="next-code"><span class="s">&lt;section class=<span class="v">"next-steps-band"</span>&gt;</span>
+  &lt;div class=<span class="v">"next-steps-band__col"</span>&gt;
+    &lt;div class=<span class="v">"icon"</span>&gt;✦&lt;/div&gt;
+    &lt;h3&gt;Salvation&lt;/h3&gt;
+    &lt;p&gt;Begin a relationship with Jesus today.&lt;/p&gt;
+    &lt;a class=<span class="v">"btn btn-tertiary"</span> href=<span class="v">"#"</span>&gt;Learn More&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;!-- repeat for Baptism, Find Your People --&gt;
+<span class="s">&lt;/section&gt;</span>
+
+<span class="s">.next-steps-band</span> {
+  <span class="p">background</span>: <span class="v">var(--color-light-accent)</span>;
+  <span class="p">padding</span>:    <span class="v">var(--space-16) var(--space-12)</span>;
+  <span class="p">display</span>:    <span class="v">grid</span>;
+  <span class="p">grid-template-columns</span>: <span class="v">repeat(3, 1fr)</span>;
+  <span class="p">gap</span>: <span class="v">var(--space-12)</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="width:100%; background:#FCF2BF; padding:18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; text-align:center;">
+            <div>
+              <div style="font-size:24px; color:#7A6F65; margin-bottom:4px;">✦</div>
+              <h3 style="margin:0 0 4px; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; color:#474D47; text-transform:uppercase;">Salvation</h3>
+              <p style="margin:0 0 8px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:10px; color:#474D47;">Begin a relationship with Jesus.</p>
+              <a href="#" style="display:inline-block; padding:5px 12px; background:#474D47; color:#FAF3F0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Learn More</a>
+            </div>
+            <div>
+              <div style="font-size:24px; color:#7A6F65; margin-bottom:4px;">≈</div>
+              <h3 style="margin:0 0 4px; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; color:#474D47; text-transform:uppercase;">Baptism</h3>
+              <p style="margin:0 0 8px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:10px; color:#474D47;">Take your next step publicly.</p>
+              <a href="#" style="display:inline-block; padding:5px 12px; background:#474D47; color:#FAF3F0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Learn More</a>
+            </div>
+            <div>
+              <div style="font-size:24px; color:#7A6F65; margin-bottom:4px;">○</div>
+              <h3 style="margin:0 0 4px; font-family:'aktiv-grotesk-extended',sans-serif; font-size:13px; color:#474D47; text-transform:uppercase;">Find Your People</h3>
+              <p style="margin:0 0 8px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:10px; color:#474D47;">Join a group this week.</p>
+              <a href="#" style="display:inline-block; padding:5px 12px; background:#474D47; color:#FAF3F0; font-family:'aktiv-grotesk-extended',sans-serif; font-size:8px; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; border-radius:300px;">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         09 · QUOTE BLOCK
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="quote-block">
+      <div class="format-meta">
+        <p class="num">09 · Component</p>
+        <h3>Quote Block</h3>
+        <p>Soft Butter background, Dark Olive text. Used for pull-quotes inside long-form message notes.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-quote</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="quote-code">Copy</button>
+<pre id="quote-code"><span class="s">.sqs-block-quote</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-block)</span>;   <span class="c">/* #FCF2BF */</span>
+  <span class="p">color</span>:            <span class="v">var(--text-primary)</span>;<span class="c">/* #474D47 */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <blockquote style="background:#FCF2BF; color:#474D47; padding:18px 22px; margin:0; border-left:3px solid #BEAD93; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:16px; line-height:1.45;">
+            “Ideas reside in the same place as prayers.” <br/><span style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#7A6F65;">— Ornette Coleman</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         10 · ACCORDION BLOCK
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="accordion-block">
+      <div class="format-meta">
+        <p class="num">10 · Component</p>
+        <h3>Accordion Block</h3>
+        <p>Sermon discussion questions, FAQ sections under message posts.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-accordion</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="acc-code">Copy</button>
+<pre id="acc-code"><span class="s">.sqs-block-accordion</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-block)</span>;    <span class="c">/* #FCF2BF */</span>
+  <span class="p">border-color</span>:     <span class="v">var(--border-color)</span>;<span class="c">/* #474D47 */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%; flex-direction:column; align-items:stretch;">
+          <div style="background:#FCF2BF; border:1px solid #474D47;">
+            <details open style="padding:10px 14px; border-bottom:1px solid #474D47;">
+              <summary style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:12px; color:#474D47; text-transform:uppercase; letter-spacing:0.04em; cursor:pointer;">What stood out to you this week?</summary>
+              <p style="margin:8px 0 0; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:12px; color:#474D47;">Sit with one image, phrase, or moment from the message.</p>
+            </details>
+            <details style="padding:10px 14px;">
+              <summary style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:12px; color:#474D47; text-transform:uppercase; letter-spacing:0.04em; cursor:pointer;">What is one obedience step?</summary>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         11 · TEXT / HTML BLOCK
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="text-block">
+      <div class="format-meta">
+        <p class="num">11 · Component</p>
+        <h3>Text / HTML Block</h3>
+        <p>Default Squarespace text block — used for short notes, scripture references, links between sections.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-html</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="html-code">Copy</button>
+<pre id="html-code"><span class="s">.sqs-block-html</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-block)</span>;  <span class="c">/* #FCF2BF */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="background:#FCF2BF; padding:14px 18px; font-family:'aktiv-grotesk-condensed',sans-serif; font-size:13px; color:#474D47;">
+            <p style="margin:0 0 6px;"><strong style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase;">Scripture</strong></p>
+            <p style="margin:0;">Hebrews 12:1–2 — “…let us run with perseverance the race marked out for us…”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         12 · MARQUEE BLOCK
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="marquee-block">
+      <div class="format-meta">
+        <p class="num">12 · Component</p>
+        <h3>Marquee Block</h3>
+        <p>Section divider ticker used between Next Steps and Carousel on heavier pages.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-marquee</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="marq-code">Copy</button>
+<pre id="marq-code"><span class="s">.sqs-block-marquee</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-block)</span>;  <span class="c">/* #FCF2BF */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="background:#FCF2BF; padding:10px 0; overflow:hidden; white-space:nowrap; font-family:'span-semiboldcomp',sans-serif; font-size:24px; color:#474D47; letter-spacing:0.04em;">
+            <span>RADIANT&nbsp;&nbsp;·&nbsp;&nbsp;CENTRAL&nbsp;COAST&nbsp;&nbsp;·&nbsp;&nbsp;RADIANT&nbsp;&nbsp;·&nbsp;&nbsp;CENTRAL&nbsp;COAST&nbsp;&nbsp;·&nbsp;&nbsp;RADIANT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         13 · IMAGE OVERLAYS
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="image-overlay">
+      <div class="format-meta">
+        <p class="num">13 · Component</p>
+        <h3>Image Overlays</h3>
+        <p>Two flavors: solid Warm Taupe for individual blocks, 50% Dark Olive global tint over hero imagery.</p>
+        <span class="filepath">components/content-blocks.css</span>
+        <span class="selector">.sqs-block-image .image-overlay / .global-overlay</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="img-code">Copy</button>
+<pre id="img-code"><span class="s">.sqs-block-image .image-overlay</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-overlay)</span>;       <span class="c">/* #7A6F65 */</span>
+}
+
+<span class="s">.sqs-block-image .global-overlay</span> {
+  <span class="p">background-color</span>: <span class="v">var(--bg-overlay-global)</span>;<span class="c">/* rgba(71,77,71,0.5) */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%; gap:8px;">
+          <div style="position:relative; flex:1; aspect-ratio:16/9; background:linear-gradient(135deg,#7A6F65,#474D47);">
+            <div style="position:absolute; inset:0; background:#7A6F65; opacity:0.85; display:flex; align-items:center; justify-content:center; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.16em;">SOLID OVERLAY</div>
+          </div>
+          <div style="position:relative; flex:1; aspect-ratio:16/9; background:linear-gradient(135deg,#BEAD93,#7A6F65);">
+            <div style="position:absolute; inset:0; background:rgba(71,77,71,0.5); display:flex; align-items:center; justify-content:center; color:#FCF2BF; font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.16em;">GLOBAL 50%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         14 · FORM BLOCK
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="form-block">
+      <div class="format-meta">
+        <p class="num">14 · Component</p>
+        <h3>Form Block</h3>
+        <p>Newsletter and contact forms inside message posts. Square inputs, pill submit, Soft Butter shell.</p>
+        <span class="filepath">components/forms.css</span>
+        <span class="selector">.sqs-block-form, .newsletter-block</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="form-code">Copy</button>
+<pre id="form-code"><span class="s">.sqs-block-form</span> {
+  <span class="p">background-color</span>: <span class="v">var(--form-bg)</span>;     <span class="c">/* #FCF2BF */</span>
+}
+
+<span class="s">.sqs-block-form input,
+.sqs-block-form textarea,
+.sqs-block-form select</span> {
+  <span class="p">background-color</span>: <span class="v">var(--form-field-bg)</span>;   <span class="c">/* #ffffff */</span>
+  <span class="p">color</span>:            <span class="v">var(--form-field-text)</span>;
+  <span class="p">border-color</span>:     <span class="v">var(--form-field-border)</span>; <span class="c">/* #DCD8D8 */</span>
+  <span class="p">border-radius</span>:    <span class="v">var(--radius-sharp)</span>;       <span class="c">/* 0px */</span>
+  <span class="p">box-shadow</span>: <span class="v">none</span>;
+}
+
+<span class="s">.sqs-block-form .form-button</span> {
+  <span class="p">background-color</span>: <span class="v">var(--form-btn-bg)</span>;
+  <span class="p">color</span>:            <span class="v">var(--form-btn-text)</span>;
+  <span class="p">border-radius</span>:    <span class="v">var(--radius-pill)</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <form style="background:#FCF2BF; padding:14px; display:flex; flex-direction:column; gap:8px;" onsubmit="return false;">
+            <label style="font-family:'aktiv-grotesk-extended',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#474D47;">Email</label>
+            <input type="email" placeholder="you@example.com" style="background:#fff; border:1px solid #DCD8D8; padding:8px; font-family:inherit; font-size:13px; color:#474D47; border-radius:0;" />
+            <button style="margin-top:4px; padding:10px; background:#474D47; color:#FAF3F0; border:none; font-family:'aktiv-grotesk-extended',sans-serif; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; border-radius:300px; cursor:pointer;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         15 · ANNOUNCEMENT BAR
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="announcement-bar">
+      <div class="format-meta">
+        <p class="num">15 · Component</p>
+        <h3>Announcement Bar</h3>
+        <p>Site-wide thin band above the header — used for service-time changes and special-message callouts.</p>
+        <span class="filepath">components/navigation.css</span>
+        <span class="selector">.announcement-bar</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="ann-code">Copy</button>
+<pre id="ann-code"><span class="s">.announcement-bar</span> {
+  <span class="p">background-color</span>: <span class="v">var(--announcement-bg)</span>;   <span class="c">/* #474D47 */</span>
+  <span class="p">color</span>:            <span class="v">var(--announcement-text)</span>; <span class="c">/* #FAF3F0 */</span>
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="background:#474D47; color:#FAF3F0; padding:10px 16px; font-family:'aktiv-grotesk-extended',sans-serif; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; text-align:center;">Sundays · 9 &amp; 11 am · Watch live →</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         16 · MOBILE NAV OVERLAY
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="format" id="nav-menu">
+      <div class="format-meta">
+        <p class="num">16 · Component</p>
+        <h3>Mobile Nav Overlay</h3>
+        <p>Full-screen menu uses span-semiboldcomp at 45 px for links and span-regularconditalic at 25 px for controls. Same family system as <code>h1 em</code>.</p>
+        <span class="filepath">components/navigation.css</span>
+        <span class="selector">.header-menu-nav-item a, .header-menu-controls-control span</span>
+      </div>
+      <div class="snippet">
+        <span class="tab">CSS</span>
+        <button class="copy-btn" data-copy="nav-code">Copy</button>
+<pre id="nav-code"><span class="s">.header-menu</span> {
+  <span class="p">background-color</span>: <span class="v">var(--nav-overlay-bg)</span>;
+}
+
+<span class="s">.header-menu-nav-item a</span> {
+  <span class="p">color</span>:        <span class="v">var(--nav-overlay-link)</span>;
+  <span class="p">font-family</span>:  <span class="v">var(--font-callout)</span>;     <span class="c">/* span-semiboldcomp */</span>
+  <span class="p">font-size</span>:    <span class="v">45px</span>;
+}
+
+<span class="s">.header-menu-controls-control span</span> {
+  <span class="p">font-family</span>:    <span class="v">var(--font-secondary-callout)</span>;
+  <span class="p">font-size</span>:      <span class="v">25px</span>;
+  <span class="p">text-transform</span>: <span class="v">lowercase</span>;
+}</pre>
+      </div>
+      <div class="preview">
+        <span class="preview-label">Live</span>
+        <div class="preview-body" style="width:100%;">
+          <div style="background:#FAF3F0; padding:18px; width:100%; display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
+            <a href="#" style="font-family:'span-semiboldcomp',sans-serif; font-size:26px; color:#474D47; text-decoration:none; line-height:1;">Home</a>
+            <a href="#" style="font-family:'span-semiboldcomp',sans-serif; font-size:26px; color:#474D47; text-decoration:none; line-height:1;">Messages</a>
+            <a href="#" style="font-family:'span-semiboldcomp',sans-serif; font-size:26px; color:#474D47; text-decoration:none; line-height:1;">Plan a Visit</a>
+            <span style="font-family:'span-regularconditalic',sans-serif; font-style:normal; font-size:16px; color:#7A6F65; text-transform:lowercase; margin-top:6px;">close menu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════════════════════════════════════════════════════════
+         HANDOFF
+    ═════════════════════════════════════════════════════════════ -->
+    <section class="handoff" id="merge">
+      <h2>Merge into the master skill</h2>
+      <p>Each preview above is rendered with the canonical CSS from <a href="https://github.com/LegacyCo/radiant-church">LegacyCo/radiant-church</a>. To lift any single card back into the skill, copy the snippet shown and drop it into the matching file:</p>
+
+      <table>
+        <thead>
+          <tr><th>Format</th><th>Source file</th><th>Anchor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Color Tokens</td><td>tokens/colors.css</td><td>#color-tokens</td></tr>
+          <tr><td>Typography &amp; Callouts</td><td>tokens/typography.css</td><td>#typography</td></tr>
+          <tr><td>Spacing &amp; Radius</td><td>tokens/spacing.css</td><td>—</td></tr>
+          <tr><td>Buttons</td><td>components/buttons.css</td><td>#buttons</td></tr>
+          <tr><td>Summary / Quote / Accordion / Text / Marquee / Image Overlay</td><td>components/content-blocks.css</td><td>#summary-block · #quote-block · #accordion-block · #text-block · #marquee-block · #image-overlay</td></tr>
+          <tr><td>Form Block</td><td>components/forms.css</td><td>#form-block</td></tr>
+          <tr><td>Announcement Bar / Mobile Nav Overlay</td><td>components/navigation.css</td><td>#announcement-bar · #nav-menu</td></tr>
+          <tr><td>Hero Video Embed</td><td>LegacyCo/legacy_playground/church-youtube-widget/squarespace-embed.html</td><td>#hero-video</td></tr>
+          <tr><td>Metadata Row · Next Steps Band · Sermon Carousel</td><td>Layout patterns — assemble in Squarespace section</td><td>#metadata-row · #next-steps-band · #sermon-carousel</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:24px;">All examples consume the same <code>tokens/index.css</code> entry point — no overrides. The <code>style-reference.css</code> file in this folder only styles the reference page chrome. When merging, you can safely delete <code>style-reference.css</code> and <code>index.html</code>; the <code>tokens/</code> + <code>components/</code> + <code>fonts/</code> folders are byte-for-byte the same as the source repo.</p>
+    </section>
+
+
+    <section class="handoff" id="tokens-table" style="background:var(--color-light-accent); color:var(--color-black);">
+      <h2 style="color:var(--color-black);">Token cheat-sheet</h2>
+      <table>
+        <thead>
+          <tr><th style="color:var(--color-dark-accent);">Token</th><th style="color:var(--color-dark-accent);">Value</th><th style="color:var(--color-dark-accent);">Used for</th></tr>
+        </thead>
+        <tbody style="color:var(--color-black);">
+          <tr><td>--bg-site</td><td>#FAF3F0</td><td>Page background</td></tr>
+          <tr><td>--bg-block</td><td>#FCF2BF</td><td>Cards, text/quote/accordion/marquee, form shells</td></tr>
+          <tr><td>--bg-overlay</td><td>#7A6F65</td><td>Solid image overlay</td></tr>
+          <tr><td>--bg-overlay-global</td><td>rgba(71,77,71,0.5)</td><td>Global hero image tint</td></tr>
+          <tr><td>--btn-primary-bg / -text</td><td>#BEAD93 / #FCF2BF</td><td>Primary CTAs (Watch, RSVP)</td></tr>
+          <tr><td>--btn-secondary-bg / -text</td><td>#474D47 / #FCF2BF</td><td>Give, Subscribe</td></tr>
+          <tr><td>--btn-tertiary-bg / -text</td><td>#474D47 / #FAF3F0</td><td>Ghost CTA on Next Steps band</td></tr>
+          <tr><td>--radius-sharp</td><td>0px</td><td>Inputs, cards</td></tr>
+          <tr><td>--radius-pill</td><td>300px</td><td>Buttons only</td></tr>
+          <tr><td>--font-heading</td><td>Aktiv Grotesk Extended</td><td>H1–H4 base</td></tr>
+          <tr><td>--font-body</td><td>Aktiv Grotesk Condensed</td><td>Paragraphs</td></tr>
+          <tr><td>--font-callout</td><td>span-semiboldcomp</td><td>&lt;em&gt; in headings, mobile nav 45px</td></tr>
+          <tr><td>--font-secondary-callout</td><td>span-regularconditalic</td><td>.sqsrte-small em, nav controls 25px</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+
+    <footer class="ref-footer">
+      Radiant Central Coast · /sermon-archive style reference · generated 2026-05-12 · <a href="https://github.com/LegacyCo/radiant-church" style="color:var(--color-dark-accent);">github.com/LegacyCo/radiant-church</a>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Copy-to-clipboard for each snippet
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = document.getElementById(btn.dataset.copy);
+      if (!target) return;
+      var text = target.innerText;
+      navigator.clipboard.writeText(text).then(function(){
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(function(){
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 1400);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

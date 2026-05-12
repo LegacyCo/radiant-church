@@ -1,0 +1,385 @@
+/**
+ * Style Reference — Page Chrome
+ * ----------------------------------------------------------------
+ * Layout, navigation, and snippet UI for the reference page only.
+ * Component examples in the right column use the real
+ * Radiant design tokens from /tokens/ and /components/ — DO NOT
+ * override token values here.
+ */
+
+/* ─── Reset (page chrome only) ──────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+
+/* ─── Page Frame ────────────────────────────────────────────────── */
+body.ref {
+  font-family: var(--font-body, system-ui, sans-serif);
+  background: var(--bg-site);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.ref-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+/* ─── Sidebar / TOC ─────────────────────────────────────────────── */
+.ref-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 32px 24px;
+  border-right: 1px solid var(--color-black);
+}
+
+.ref-sidebar h2 {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--color-light-accent);
+  font-weight: 600;
+}
+
+.ref-sidebar .repo-link {
+  display: block;
+  font-size: 12px;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.ref-sidebar nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: section;
+}
+
+.ref-sidebar nav li {
+  counter-increment: section;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.ref-sidebar nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  display: flex;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.ref-sidebar nav a::before {
+  content: counter(section, decimal-leading-zero);
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.ref-sidebar nav a:hover {
+  border-bottom-color: var(--color-accent);
+}
+
+.ref-sidebar .sb-section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-dark-accent);
+}
+
+/* ─── Main Column ───────────────────────────────────────────────── */
+.ref-main { padding: 40px 48px 96px; max-width: 1400px; }
+
+.ref-header {
+  border-bottom: 1px solid var(--color-black);
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+.ref-header .eyebrow {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dark-accent);
+  margin: 0 0 8px;
+}
+
+.ref-header h1 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  line-height: 1.05;
+  margin: 0 0 12px;
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.ref-header h1 em {
+  font-family: var(--font-callout);
+  font-style: normal;
+}
+
+.ref-header p {
+  max-width: 64ch;
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-dark-accent);
+}
+
+.ref-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 12px;
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+}
+
+.ref-meta span {
+  color: var(--color-dark-accent);
+  text-transform: uppercase;
+}
+
+.ref-meta strong {
+  color: var(--color-black);
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* ─── Format Card ───────────────────────────────────────────────── */
+.format {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-accent);
+  scroll-margin-top: 16px;
+}
+
+.format:last-of-type { border-bottom: 1px solid var(--color-accent); }
+
+.format-meta h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--color-black);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.format-meta .num {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.format-meta p {
+  font-size: 13px;
+  color: var(--color-dark-accent);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.format-meta .filepath {
+  display: inline-block;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--color-black);
+  background: var(--color-light-accent);
+  padding: 4px 8px;
+  word-break: break-all;
+}
+
+.format-meta .selector {
+  display: block;
+  margin-top: 6px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  color: var(--color-dark-accent);
+}
+
+/* ─── Snippet Column ────────────────────────────────────────────── */
+.snippet {
+  position: relative;
+  background: #1c1f1c;
+  color: #f1ece4;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  padding: 16px 16px 16px 16px;
+  overflow: auto;
+  max-height: 360px;
+  border-radius: 4px;
+}
+
+.snippet pre { margin: 0; white-space: pre; }
+
+.snippet .copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 9px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.snippet .copy-btn:hover { background: var(--color-light-accent); }
+.snippet .copy-btn.copied { background: var(--color-light-accent); }
+
+.snippet .tab {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+/* Token highlights — light syntax dye */
+.snippet .c { color: #7a8f7a; }     /* comments */
+.snippet .v { color: #d8be84; }     /* var(--…) */
+.snippet .s { color: #f0d49a; }     /* selectors */
+.snippet .p { color: #b9c9b9; }     /* property */
+
+/* ─── Preview Column ────────────────────────────────────────────── */
+.preview {
+  background: var(--color-white);
+  border: 1px solid var(--color-accent);
+  padding: 16px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-label {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-dark-accent);
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: var(--color-white);
+  padding: 2px 0;
+}
+
+.preview-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ─── Color Swatch Grid ─────────────────────────────────────────── */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+.swatch {
+  border: 1px solid var(--color-dark-accent);
+  text-align: center;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+}
+.swatch .chip { height: 56px; }
+.swatch .label { padding: 6px 4px; background: var(--color-white); color: var(--color-black); line-height: 1.3; }
+.swatch .label .name { font-family: var(--font-heading); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-bottom: 2px; }
+
+/* ─── Handoff Section ───────────────────────────────────────────── */
+.handoff {
+  margin-top: 80px;
+  padding: 32px;
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.handoff h2 {
+  font-family: var(--font-heading);
+  margin: 0 0 12px;
+  color: var(--color-light-accent);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.handoff p { max-width: 64ch; font-size: 14px; }
+.handoff a { color: var(--color-accent); }
+
+.handoff table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 12px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.handoff th, .handoff td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-dark-accent);
+  color: var(--color-white);
+  vertical-align: top;
+}
+
+.handoff th {
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ─── Footer ────────────────────────────────────────────────────── */
+.ref-footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-accent);
+  font-size: 12px;
+  color: var(--color-dark-accent);
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .format { grid-template-columns: 1fr; }
+  .format-meta { border-left: 3px solid var(--color-accent); padding-left: 12px; }
+}
+
+@media (max-width: 800px) {
+  .ref-shell { grid-template-columns: 1fr; }
+  .ref-sidebar { position: static; height: auto; }
+  .ref-main { padding: 24px; }
+  .ref-header h1 { font-size: 36px; }
+}
